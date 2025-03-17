@@ -1,0 +1,9 @@
+- il proxy ce lo da il prof. è quello che dirige le chiamate del nostro front-end al nostro back-end
+- mockoon: serve per far simulare la comunicazione del nostro progetto con i nostri collaboratori. 
+- MVC: Model View Controller definisce tre entità 
+    -modello: definisce la struttura dati (DB)
+    -view: definisce come quel dato viene esposto
+    -controller: definisce la logica per manipolare il modello e per modificare il dato prima di metterlo nella vista
+-un front-end chiama un porprio microservizio, poi questo chiama un db o un altro microservizio
+-scaffholding: permette di creare lo stato iniziale del progetto
+springinizializr

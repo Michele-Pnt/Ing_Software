@@ -1,3 +1,10 @@
+Un'azienda di vendita online vuole sviluppare un sistema software per gestire la propria piattaforma e-commerce. Il sistema deve permettere agli utenti di registrarsi e autenticarsi, acquistare prodotti e gestire i pagamenti. Gli amministratori devono poter gestire il catalogo dei prodotti, modificando prezzi e disponibilità.
+
+Gli utenti possono effettuare ordini composti da uno o più prodotti, specificando la quantità desiderata. Ogni ordine ha un costo totale calcolato in base ai prodotti scelti e deve essere associato a un pagamento. Il pagamento può avvenire tramite carta di credito o PayPal e deve avere un esito (Riuscito o Fallito).
+
+Una volta effettuato il pagamento, l'ordine viene elaborato per la spedizione. Ogni ordine ha uno stato che può essere "In Elaborazione", "Spedito" o "Consegnato". La spedizione è associata a un corriere e a un numero di tracking.
+
+Si richiede di realizzare il diagramma UML delle classi per rappresentare il sistema, definendo le classi necessarie, le loro relazioni (associazioni, ereditarietà, aggregazioni o composizioni) e i metodi principali.
 @startuml
 class Utente {
   - ID: int

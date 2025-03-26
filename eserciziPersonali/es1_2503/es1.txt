@@ -1,0 +1,58 @@
+@startuml
+class Utente {
+  - ID: int
+  - nome: String
+  - email: String
+  + registrarsi(): void
+  + effettuareOrdine(ordine: Ordine): void
+}
+
+class Cliente {
+  + visualizzareProdotti(): void
+}
+
+class Amministratore {
+  + aggiungereProdotto(prodotto: Prodotto): void
+  + rimuovereProdotto(prodotto: Prodotto): void
+}
+
+class Prodotto {
+  - ID: int
+  - nome: String
+  - descrizione: String
+  - prezzo: double
+  - quantitaDisponibile: int
+  + aggiornareStock(qta: int): void
+}
+
+class Ordine {
+  - ID: int
+  - stato: String
+  + aggiungereProdotto(prodotto: Prodotto, qta: int): void
+  + confermareOrdine(): void
+}
+
+class Pagamento {
+  - ID: int
+  - metodo: String
+  - esito: String
+  + elaborarePagamento(): boolean
+}
+
+class Spedizione {
+  - ID: int
+  - corriere: String
+  - numeroTracking: String
+  + tracciaSpedizione(): String
+}
+
+Utente <|-- Cliente
+Utente <|-- Amministratore
+
+Cliente "1" -- "0..*" Ordine : effettua
+Ordine "1" -- "1" Pagamento : ha
+Ordine "1" -- "1" Spedizione : è associato a
+Ordine "1" -- "0..*" Prodotto : contiene
+Amministratore "1" -- "0..*" Prodotto : gestisce
+
+@enduml
